@@ -148,7 +148,7 @@ function articleMaker(
 
   article.appendChild(expandButton);
 
-  console.log(article);
+  // console.log(article);
 
   expandButton.addEventListener("click", (event) => {
     expandButton.classList.toggle("article-open");
@@ -162,12 +162,13 @@ function articleMaker(
 const articles = document.querySelector(".articles");
 
 data.forEach((dataObj) => {
-  const articleComponet = articleMaker(
-    dataObj.title,
-    dataObj.date,
-    dataObj.firstParagraph,
-    dataObj.secondParagraph,
-    dataObj.thirdParagraph
+  articles.appendChild(
+    articleMaker(
+      dataObj.title,
+      dataObj.date,
+      dataObj.firstParagraph,
+      dataObj.secondParagraph,
+      dataObj.thirdParagraph
+    )
   );
-  articles.appendChild(articleComponet);
 });
